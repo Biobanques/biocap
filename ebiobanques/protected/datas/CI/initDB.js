@@ -5,7 +5,7 @@
  */
 
 
-db = db.getSiblingDB('interop');
+db = db.getSiblingDB('biocap');
 db.createUser({user:'circleUser',pwd:'circlePwd',roles:['readWrite']})
 
 
