@@ -46,5 +46,5 @@ class CommonProperties
     public static $GMAPS_KEY = "";
     public static $TESTBROWSER = 'chrome';
     public static $LAUNCHSELENIUM = false;
-    public static $SERVERTESTURL = 'http://ebiobanques.local:8080';
+    public static $SERVERTESTURL = 'http://biocap.local:8080';
 }
