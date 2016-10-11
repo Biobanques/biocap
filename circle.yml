@@ -9,11 +9,11 @@ machine:
         - mv /home/ubuntu/biocap/ebiobanques/CommonPropertiesTest.php /home/ubuntu/biocap/ebiobanques/CommonProperties.php
 
     hosts:
-        ebiobanques.local: 127.0.0.1
+        biocap.local: 127.0.0.1
 database:
   pre: 
-      - mongo interop < ~/biocap/ebiobanques/protected/datas/CI/initDB.js
-      - mongo interop < ~/biocap/ebiobanques/protected/datas/CI/insertTestData.js
+      - mongo biocap < ~/biocap/ebiobanques/protected/datas/CI/initDB.js
+      - mongo biocap < ~/biocap/ebiobanques/protected/datas/CI/insertTestData.js
       
   override:
 #    - mysql -u ubuntu circle_test < /home/ubuntu/biocap/ebiobanques/protected/data/dump_ebiobanques_v0.1.sql
@@ -45,7 +45,7 @@ general:
   artifacts:
       - "/home/ubuntu/biocap/ebiobanques/protected/tests/report"
       - "/home/ubuntu/biocap/ebiobanques/protected/runtime/application.log"
-      - "/var/log/apache2/ebiobanques.error_log"
+      - "/var/log/apache2/biocap.error_log"
       
 
 
