@@ -1,0 +1,12 @@
+/biocap/import_fileXLS.xls
+/biocap/composer.lock
+/biocap/import_fileXLSX.xlsx
+/biocap/import_example_ebiobanques.xls
+/biocap/import_fileCSV.csv
+/biocap/ebiobanques/assets/
+/biocap/ebiobanques/protected/runtime/
+/biocap/ebiobanques/CommonPropertiesProd.php
+/biocap/ebiobanques/CommonProperties.php
+/biocap/nbproject/
+/biocap/vendor/
+/biocap/ebiobanques/protected/tests/report/
