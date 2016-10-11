@@ -11,3 +11,7 @@
 /biocap/vendor/
 /biocap/ebiobanques/protected/tests/report/
 /biocap/tests_selenium/
+/ebiobanques/assets/
+/ebiobanques/protected/runtime/
+/composer.lock
+/ebiobanques/protected/tests/report/
