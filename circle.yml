@@ -3,20 +3,20 @@ machine:
     php:
         version: 5.6.22
     post:
-        - mkdir /home/ubuntu/biocap/ebiobanques/protected/runtime
-        - mkdir /home/ubuntu/biocap/ebiobanques/assets
+        - mkdir /home/ubuntu/biocap/biocap/ebiobanques/protected/runtime
+        - mkdir /home/ubuntu/biocap/biocap/ebiobanques/assets
         - chmod 777 -R /home/ubuntu/biocap/
-        - mv /home/ubuntu/biocap/ebiobanques/CommonPropertiesTest.php /home/ubuntu/biocap/ebiobanques/CommonProperties.php
+        - mv /home/ubuntu/biocap/biocap/ebiobanques/CommonPropertiesTest.php /home/ubuntu/biocap/biocap/ebiobanques/CommonProperties.php
 
     hosts:
         ebiobanques.local: 127.0.0.1
 database:
   pre: 
-      - mongo interop < ~/biocap/ebiobanques/protected/datas/CI/initDB.js
-      - mongo interop < ~/biocap/ebiobanques/protected/datas/CI/insertTestData.js
+      - mongo interop < ~/biocap/biocap/ebiobanques/protected/datas/CI/initDB.js
+      - mongo interop < ~/biocap/biocap/ebiobanques/protected/datas/CI/insertTestData.js
       
   override:
-#    - mysql -u ubuntu circle_test < /home/ubuntu/biocap/ebiobanques/protected/data/dump_ebiobanques_v0.1.sql
+#    - mysql -u ubuntu circle_test < /home/ubuntu/biocap/biocap/ebiobanques/protected/data/dump_ebiobanques_v0.1.sql
 dependencies:
    pre:
       - sudo apt-get update 
@@ -34,17 +34,17 @@ dependencies:
       - wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
       - java -jar selenium-server-standalone-2.44.0.jar:
             background: true
-      - sudo cp ~/biocap/ebiobanques/protected/datas/CI/biocap_apache_config.conf /etc/apache2/sites-available
+      - sudo cp ~/biocap/biocap/ebiobanques/protected/datas/CI/biocap_apache_config.conf /etc/apache2/sites-available
       - sudo a2ensite biocap_apache_config.conf
       - sudo service apache2 restart
 
 test: 
     override: 
-        - phpunit -c ~/biocap/ebiobanques/protected/tests/phpunit.xml 
+        - phpunit -c ~/biocap/biocap/ebiobanques/protected/tests/phpunit.xml 
 general:
   artifacts:
-      - "/home/ubuntu/biocap/ebiobanques/protected/tests/report"
-      - "/home/ubuntu/biocap/ebiobanques/protected/runtime/application.log"
+      - "/home/ubuntu/biocap/biocap/ebiobanques/protected/tests/report"
+      - "/home/ubuntu/biocap/biocap/ebiobanques/protected/runtime/application.log"
       - "/var/log/apache2/ebiobanques.error_log"
       
 
