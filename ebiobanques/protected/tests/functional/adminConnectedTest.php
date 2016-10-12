@@ -18,9 +18,9 @@ class AdminConnectedTest extends FunctionalAbstractClass
         // click | link=Connexion |
         parent::$webDriver->findElement(WebDriverBy::linkText("Connexion"))->click();
         // type | id=LoginForm_password | adm_BCApp
-        parent::$webDriver->findElement(WebDriverBy::id("LoginForm_password"))->sendKeys("adm_BCApp");
+        parent::$webDriver->findElement(WebDriverBy::id("LoginForm_password"))->sendKeys("admPwd");
         // type | id=LoginForm_username | admin
-        parent::$webDriver->findElement(WebDriverBy::id("LoginForm_username"))->sendKeys("admin");
+        parent::$webDriver->findElement(WebDriverBy::id("LoginForm_username"))->sendKeys("adminTest");
         // click | name=yt0 |
         parent::$webDriver->findElement(WebDriverBy::name("yt0"))->click();
         // assertElementPresent | link=Rechercher des échantillons |
@@ -28,7 +28,7 @@ class AdminConnectedTest extends FunctionalAbstractClass
         // assertElementPresent | link=Administration |
         $this->assertTrue(parent::$webDriver->findElements(WebDriverBy::linkText("Administration")) != null);
         // assertElementPresent | link=Déconnexion (admin) |
-        $this->assertTrue(parent::$webDriver->findElements(WebDriverBy::linkText("Déconnexion (admin)")) != null);
+        $this->assertTrue(parent::$webDriver->findElements(WebDriverBy::linkText("Déconnexion (adminTest)")) != null);
         // click | link=Administration |
         parent::$webDriver->findElement(WebDriverBy::linkText("Administration"))->click();
         // assertElementPresent | link=Utilisateurs |
@@ -109,7 +109,7 @@ class AdminConnectedTest extends FunctionalAbstractClass
         // assertElementPresent | css=img[alt="View"] |
         $this->assertTrue(parent::$webDriver->findElements(WebDriverBy::cssSelector("img[alt=\"View\"]")) != null);
         // click | link=Déconnexion (admin) |
-        parent::$webDriver->findElement(WebDriverBy::linkText("Déconnexion (admin)"))->click();
+        parent::$webDriver->findElement(WebDriverBy::linkText("Déconnexion (adminTest)"))->click();
     }
 
 }

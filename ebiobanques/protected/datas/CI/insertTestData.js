@@ -1,4 +1,35 @@
-db.biobank.insert(/* 1 */
+db.user.insert(/* 1 */
+{
+    "_id" : ObjectId("559d796f96ae237902c1ce70"),
+
+    "prenom" : "user",
+    "nom" : "TEST",
+    "login" : "user",
+    "password" : "user",
+    "email" : "test@monmail.com",
+    "telephone" : "01 02 03 04 05",
+    "profil" : "0",
+    "inactif" : NumberLong(0),
+    "biobank_id" : 1
+},
+
+/* 2 */
+{
+    "_id" : ObjectId("557aa54b0940a14de59ad8b6"),
+    "prenom" : "admin",
+    "nom" : "ADMIN",
+    "login" : "adminTest",
+    "password" : "admPwd",
+    "email" : "admin@mail.fr",
+    "telephone" : "01 09080706",
+    "gsm" : "0102030405",
+    "profil" : "1",
+    "inactif" : "0",
+    "biobank_id" : 1,
+    "verifyCode" : "ok"
+});
+
+db.sampleCollected.insert(/* 1 */
 {
     "_id" : ObjectId("568e1d590175449b0f8b45e1"),
     "ident_pat_biocap" : "00110R",
