@@ -1,4 +1,4 @@
-db.user.insert(/* 1 */
+db.user.insert([/* 1 */
 {
     "_id" : ObjectId("559d796f96ae237902c1ce70"),
 
@@ -21,15 +21,15 @@ db.user.insert(/* 1 */
     "login" : "adminTest",
     "password" : "admPwd",
     "email" : "admin@mail.fr",
-    "telephone" : "01 09080706",
+    "telephone" : "01 09 08 07 06",
     "gsm" : "0102030405",
     "profil" : "1",
     "inactif" : "0",
     "biobank_id" : 1,
     "verifyCode" : "ok"
-});
+}]);
 
-db.sampleCollected.insert(/* 1 */
+db.sampleCollected.insert([/* 1 */
 {
     "_id" : ObjectId("568e1d590175449b0f8b45e1"),
     "ident_pat_biocap" : "00110R",
@@ -7387,4 +7387,4 @@ db.sampleCollected.insert(/* 1 */
     "BB_derives_non_tum" : "",
     "evt" : NumberLong(1),
     "age" : NumberLong(2)
-});
+}]);
