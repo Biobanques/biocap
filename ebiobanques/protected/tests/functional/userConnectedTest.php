@@ -45,7 +45,7 @@ class UserConnectedTest extends FunctionalAbstractClass
         $selectList = new Facebook\WebDriver\WebDriverSelect(parent::$webDriver->findElement(WebDriverBy::cssSelector("#BiocapForm_iccc_group1")));
 
 
-        $selectList->selectByValue("04. Tumeurs du système nerveux sympathique");
+        $selectList->selectByValue("02. Lymphomes et néoplasmes réticulo-endothéliaux");
         //parent::$webDriver->findElement(WebDriverBy::cssSelector("#BiocapForm_iccc_group1"))->selectByValue("04. Tumeurs du système nerveux sympathique");
 //        parent::$webDriver->findElement(WebDriverBy::cssSelector("#BiocapForm_iccc_group1 option[value=\"04. Tumeurs du système nerveux sympathique\"]"))->click();
         // assertElementPresent | id=BiocapForm_iccc_sousgroup1 |
@@ -55,7 +55,7 @@ class UserConnectedTest extends FunctionalAbstractClass
         // select | id=BiocapForm_iccc_group2 | label=IX. Sarcomes des tissus mous et extra-osseux
         // ERROR: Caught exception [TypeError: value.replace is not a function]
         // click | css=#BiocapForm_iccc_group2 > option[value="IX. Sarcomes des tissus mous et extra-osseux"] |
-        parent::$webDriver->findElement(WebDriverBy::cssSelector("#BiocapForm_iccc_group2 > option[value=\"09. Sarcomes des tissus mous et extra-osseux\"]"))->click();
+        parent::$webDriver->findElement(WebDriverBy::cssSelector("#BiocapForm_iccc_group2 > option[value=\"05. Rétinoblastomes\"]"))->click();
         // assertElementPresent | id=BiocapForm_iccc_sousgroup2 |
         $this->assertTrue(parent::$webDriver->findElements(WebDriverBy::id("BiocapForm_iccc_sousgroup2")) != null);
         // assertElementPresent | id=BiocapForm_iccc_group3 |
@@ -63,7 +63,7 @@ class UserConnectedTest extends FunctionalAbstractClass
         // select | id=BiocapForm_iccc_group3 | label=VI. Tumeurs rénales
         // ERROR: Caught exception [TypeError: value.replace is not a function]
         // click | css=#BiocapForm_iccc_group3 > option[value="VI. Tumeurs rénales"] |
-        parent::$webDriver->findElement(WebDriverBy::cssSelector("#BiocapForm_iccc_group3 > option[value=\"06. Tumeurs rénales\"]"))->click();
+        parent::$webDriver->findElement(WebDriverBy::cssSelector("#BiocapForm_iccc_group3 > option[value=\"09. Sarcomes des tissus mous et extra-osseux\"]"))->click();
         // assertElementPresent | id=BiocapForm_iccc_sousgroup3 |
         $this->assertTrue(parent::$webDriver->findElements(WebDriverBy::id("BiocapForm_iccc_sousgroup3")) != null);
         // click | name=yt1 |
@@ -84,13 +84,13 @@ class UserConnectedTest extends FunctionalAbstractClass
         // select | id=LightBiocapForm_iccc_group2 | label=II. Lymphomes et néoplasmes réticulo-endothéliaux
         // ERROR: Caught exception [TypeError: value.replace is not a function]
         // click | css=#LightBiocapForm_iccc_group2 > option[value="II. Lymphomes et néoplasmes réticulo-endothéliaux"] |
-        parent::$webDriver->findElement(WebDriverBy::cssSelector("#LightBiocapForm_iccc_group2 > option[value=\"02. Lymphomes et néoplasmes réticulo-endothéliaux\"]"))->click();
+        parent::$webDriver->findElement(WebDriverBy::cssSelector("#LightBiocapForm_iccc_group2 > option[value=\"05. Rétinoblastomes\"]"))->click();
         // assertElementPresent | id=LightBiocapForm_iccc_sousgroup2 |
         $this->assertTrue(parent::$webDriver->findElements(WebDriverBy::id("LightBiocapForm_iccc_sousgroup2")) != null);
         // select | id=LightBiocapForm_iccc_group3 | label=VII. Tumeurs hépatiques
         // ERROR: Caught exception [TypeError: value.replace is not a function]
         // click | css=#LightBiocapForm_iccc_group3 > option[value="VII. Tumeurs hépatiques"] |
-        parent::$webDriver->findElement(WebDriverBy::cssSelector("#LightBiocapForm_iccc_group3 > option[value=\"07. Tumeurs hépatiques\"]"))->click();
+        parent::$webDriver->findElement(WebDriverBy::cssSelector("#LightBiocapForm_iccc_group3 > option[value=\"09. Sarcomes des tissus mous et extra-osseux\"]"))->click();
         // assertElementPresent | id=result-grid |
         $this->assertTrue(parent::$webDriver->findElements(WebDriverBy::id("result-grid")) != null);
         // click | id=LightBiocapForm_age_10-14 |
