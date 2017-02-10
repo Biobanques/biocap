@@ -13,7 +13,7 @@ class ImportJsonCommand extends CConsoleCommand
 
      */
 
-    public function run($args) {
+   public function run($args) {
         $ImportFolder = CommonProperties::$IMPORTFOLDER;
         //increase memory limit on the fly  only for this command
         try {
@@ -63,6 +63,7 @@ class ImportJsonCommand extends CConsoleCommand
                                 break;
                             }
                         $arrayOfSample = $jsonFile[$dataKey];
+                        $arraysOfArray = array_chunk($arrayOfSample, 1000);
                         /*
                          * Insert into database
                          */
@@ -78,7 +79,13 @@ class ImportJsonCommand extends CConsoleCommand
                          * Insert datas into collection, and move file if success
                          */
                         $client->$db->createCollection('sampleCollected');
-                        if ($client->$db->sampleCollected->batchInsert($arrayOfSample)) {
+                        $result=true;
+                        foreach ($arraysOfArray as $samples){
+                            if (!$client->$db->sampleCollected->batchInsert($samples))
+                                $result=false;
+                        }
+                        
+                        if ($result) {
                             echo count($arrayOfSample) . " were successfully imported from " . $filesList[key($filesList)] . "\n";
 
                             echo "Moving file...";
