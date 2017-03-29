@@ -87,7 +87,9 @@ class RequestTools
           patient.id = this.ident_tum_biocap;
 
           patient.samples=[];
-          patient.samples.push(this);
+//          patient.samples.push(this);
+          patient.samples.push({_id:this._id,Statut_juridique:this.Statut_juridique,Inclusion_protoc_rech:this.Inclusion_protoc_rech,Echant_tumoral:this.Echant_tumoral});
+
           pat.patients.push(patient);
 
            emit(

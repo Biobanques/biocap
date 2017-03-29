@@ -598,8 +598,7 @@ class MainController extends Controller
         $map = $requestElements['map'];
         $reduce = $requestElements['reduce'];
         $finalize = $requestElements['finalize'];
-
-        $db->command(array(
+$arrayCommand = array(
             'mapreduce' => "sampleCollected",
             'query' => $query,
             'map' => $map,
@@ -607,7 +606,8 @@ class MainController extends Controller
             'finalize' => $finalize,
             //place le resultat en memoire
             'out' => Array("replace" => 'testReplace')
-        ));
+        );
+        $testResult = $db->command($arrayCommand);
 
         $queryResult = array();
         $results = $db->selectCollection('testReplace')->find(array(), array('value.CR' => true, 'value.IE' => true, 'value.patientPartialTotal' => true, 'value.patients.id' => true, 'value.patients.samples' => true,));
